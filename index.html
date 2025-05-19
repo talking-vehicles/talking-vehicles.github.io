@@ -134,7 +134,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Past work has demonstrated that autonomous vehicles can drive more safely if they communicate with one another than if they do not. However, their communication has often not been human-understandable. Using natural language as a vehicle-to-vehicle (V2V) communication protocol offers the potential for autonomous vehicles to drive cooperatively not only with each other but also with human drivers. In this work, we propose a suite of traffic tasks in autonomous driving where vehicles in a traffic scenario need to communicate in natural language to facilitate coordination in order to avoid an imminent collision and/or support efficient traffic flow. To this end, this paper introduces a novel method, LLM+Debrief, to learn a message generation and high-level decision-making policy for autonomous vehicles through multi-agent discussion. To evaluate LLM agents for driving, we developed a gym-like simulation environment that contains a range of driving scenarios. Our experimental results demonstrate that LLM+Debrief is more effective at generating meaningful and human-understandable natural language messages to facilitate cooperation and coordination than a zero-shot LLM agent. 
+            Past work has demonstrated that autonomous vehicles can drive more safely if they communicate with one another than if they do not. 
+            However, their communication has often not been human-understandable. Using natural language as a vehicle-to-vehicle (V2V) 
+            communication protocol offers the potential for autonomous vehicles to drive cooperatively not only with each other but also with 
+            human drivers. In this work, we propose a suite of traffic tasks in autonomous driving where vehicles in a traffic scenario need 
+            to communicate in natural language to facilitate coordination in order to avoid an imminent collision and/or support efficient 
+            traffic flow. To this end, this paper introduces a novel method, LLM+Debrief, to learn a message generation and high-level decision-making 
+            policy for autonomous vehicles through multi-agent discussion. To evaluate LLM agents for driving, we developed a gym-like simulation 
+            environment that contains a range of driving scenarios. Our experimental results demonstrate that LLM+Debrief is more effective at 
+            generating meaningful and human-understandable natural language messages to facilitate cooperation and coordination than a zero-shot 
+            LLM agent. 
           </p>
         </div>
       </div>
@@ -149,7 +158,8 @@
         <h2 class="title is-3">TalkingVehiclesGym</h2>
         <div class="content has-text-justified">
           <p>
-            TalkingVehiclesGym is a multi-agent gymnasium simulation environment for autonomous driving that contains a range of driving scenarios. It is designed to evaluate the performance of multi-agent communication and collaboration for cooperative driving. 
+            TalkingVehiclesGym is a multi-agent gymnasium simulation environment for autonomous driving that contains a range of driving scenarios. 
+            It is designed to evaluate the performance of multi-agent communication and collaboration for cooperative driving. 
             <img style="max-width:100%" src="./static/images/talking_vehicle_scenarios.png" class="img-reponsive" />
           </p>
         </div>
@@ -169,51 +179,17 @@
           <i>LLM+Debrief Agent Framework and Agent Learning Pipeline</i>
         </div>
         <div class="content has-text-justified">
-          <p>
-            To collect a robot episode, AutoRT proceeds in five stages.
-          </p>
+          <p><b>Agent Policy</b></p>
           <ol>
-            <li>The robot maps the environment to generate points of interest, then samples one and drives to that point.</li>
-            <li>Given an image from the robot camera, a VLM outputs text describing the
-              scene the robot observes, and objects that exist in that scene. The output is forwarded to an LLM to generate tasks the robot could attempt.</li>
-            <li>Tasks are filtered via self-reflection to reject tasks and categorize them into ones that need human assistance, and ones that do not.</li>
-            <li>A valid task is sampled from the filtered list, and the robot attempts it.</li>
-            <li>The attempt is scored on how diverse the task and video is compared to prior data, and we repeat.</li>
+            <li>In-Context Knowledge</li>
+            <li>Chain-of-Thought Reasoning</li>
           </ol>
-          <p>
-            We assume AutoRT is run on a <i>fleet</i> of many robots supervised by a smaller number of humans. The system supports defining the desired fraction of human demonstration, which we used to adjust data collection based on how autonomous we want the robots to be. Up to 20 robots were used at once, collecting over 77,000 episodes covering 6,650 unique language instructions.
-          </p>
-          <div class="columns is-centered">
-            <div style="width:50%">
-              <img src="./static/images/fleetfraction.png" class="img-reponsive" />
-              <br/>
-              <img src="./static/images/total_robots.png" class="img-reponsive" />
-              <p style="text-align:center;">
-                Number of robots running AutoRT
-              </p>
-            </div>
-          </div>
-          <div class="columns is-centered">
-            <div class="column">
-              <img src="./static/images/autort_episodes.png" class="img-reponsive" />
-              <p style="text-align:center;">
-                Total episodes collected by AutoRT
-              </p>
-            </div>
-            <div class="column">
-              <img src="./static/images/unique_tasks.png" class="img-reponsive" />
-              <p style="text-align:center;">
-                Total unique language instructions generated over time
-              </p>
-            </div>
-          </div>
-          <div class="content has-text-justified">
-            <p>Below is a time lapse of AutoRT running on 8 robots.</p>
-            <video autoplay="" loop="" muted="" playsinline="" controls="" style="width:100%">
-              <source src="./static/videos/autort_time_lapse.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
+          <p><b>Agent Learning</b></p>
+          <ol>
+            <li>Replay Buffer</li>
+            <li>Batch Sampling</li>
+            <li>Debrief</li>
+          </ol>
         </div>
       </div>
     </div>
