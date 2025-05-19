@@ -151,9 +151,18 @@
         <h2 class="title is-3">TalkingVehiclesGym</h2>
         <div class="content has-text-justified">
           <p>
-            TalkingVehiclesGym is a multi-agent gymnasium simulation environment for autonomous driving that contains a range of driving scenarios. 
-            It is designed to evaluate the performance of multi-agent communication and collaboration for cooperative driving. 
+            TalkingVehiclesGym is a multi-agent gymnasium simulation environment for the closed-loop evaluation of urban driving policies. 
+            It is designed to evaluate the performance of multi-agent communication and collaboration for an array of cooperative driving tasks. 
+            TalkingVehiclesGym supports in-episode communication in among autonomous agents through <a href="https://mqtt.org/">MQTT</a>.
+          </p>
+          <p>
             <img style="max-width:100%" src="./static/images/talking_vehicle_scenarios.png" class="img-reponsive" />
+            <figcaption class="has-text-centered has-text-grey-dark is-size-8">
+              <b>Overview of Scenarios and Agent Roles.</b>
+              <span style="color: #006400;" class="has-text-weight-bold">Green circles</span>: Focal agents (establish coordination through communication); 
+              <span style="color: #8B0000;" class="has-text-weight-bold">Red circles</span>: Potential colliders (violate traffic rules or do not yield); 
+              <span style="color: #00008B;" class="has-text-weight-bold">Blue circles</span>: Background agents (not necessarily adversarial).
+            </figcaption>
           </p>
         </div>
       </div>
@@ -166,12 +175,17 @@
     <!-- Overview -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">LLM+Debrief Method</h2>
+        <h2 class="title is-3">
+          LLM+Debrief
+          <span class="is-size-4" style="color: #666666;">Learn to Collaborate in Natural Language via Self-Play</span>
+        </h2>
         <div class="content has-text-justified">
           <p style="text-align:center;">
             <img style="max-width:100%" src="./static/images/llm_debrief_method.png" class="img-reponsive" />
+            <figcaption class="has-text-centered has-text-grey-dark is-size-8">
+              <b>LLM+Debrief Agent Framework and Agent Learning Pipeline.</b>
+            </figcaption>
           </p>
-          <i>LLM+Debrief Agent Framework and Agent Learning Pipeline</i>
         </div>
         <div class="content has-text-justified">
           <p><b>Agent Policy</b></p>
