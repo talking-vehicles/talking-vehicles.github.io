@@ -179,6 +179,12 @@
           LLM+Debrief
           <span class="is-size-4" style="color: #666666;">Learn to Collaborate in Natural Language via Self-Play</span>
         </h2>
+        <p>
+          We ask the key research question that whether the current LLM agents are able to coordination well in the driving task without pre-coordination,
+          and whether their cooperation capability could be improved over interactions. We start from building an agent that only rely on Chain-of-Thought,
+          gradually extending to self-reflections and centralized discussions (LLM+Debrief) to create knowledge for future driving and collaborations.
+        </p>
+        <br>
         <div class="content has-text-justified">
           <p style="text-align:center;">
             <img style="max-width:100%" src="./static/images/llm_debrief_method.png" class="img-reponsive" />
@@ -188,16 +194,34 @@
           </p>
         </div>
         <div class="content has-text-justified">
-          <p><b>Agent Policy</b></p>
+          <p class="has-text-weight-bold is-size-4 has-text-grey-dark">Agent Policy</p>
+            <p>
+              The agent's probability distribution among actions is decided by an LLM with a prompt that contains the observations, tasks, traffic rules,
+              received messages from other vehicles, and other important information for driving. The agent output must be in the json format that decides 
+              a command and/or a message to send.
+            </p>
           <ol>
-            <li>In-Context Knowledge</li>
-            <li>Chain-of-Thought Reasoning</li>
+            <li>
+              <strong>In-Context Knowledge</strong>
+              <p>
+                Since the language models are auto-regressive, the probability of taking action is affected by the context provided to the agents.
+                Thus, we can augment the prompt with the prior knowledge to alter the policy.
+              </p>
+            </li>
+            <li>
+              <strong>Chain-of-Thought Reasoning</strong>
+              <p>
+                We prompt the agent to reason about its surrounding and possible consequence of each action first, then then serve the output reasoning 
+                as a part of the prompt for final decisions.
+              </p>
+            </li>
           </ol>
-          <p><b>Agent Learning</b></p>
+        
+          <p class="has-text-weight-bold is-size-4 has-text-grey-dark">Agent Learning</p>
           <ol>
-            <li>Replay Buffer</li>
-            <li>Batch Sampling</li>
-            <li>Debrief</li>
+            <li><strong>Replay Buffer</strong></li>
+            <li><strong>Batch Sampling</strong></li>
+            <li><strong>Debrief</strong></li>
           </ol>
         </div>
       </div>
