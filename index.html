@@ -177,7 +177,7 @@
       <div class="column is-full-width">
         <h2 class="title is-3">
           LLM+Debrief
-          <span class="is-size-4" style="color: #666666;">Learn to Collaborate in Natural Language via Self-Play</span>
+          <span class="is-size-4" style="color: #666666;">Learn to Collaborate using Natural Language via Self-Play</span>
         </h2>
         <p>
           We ask the key research question that whether the current LLM agents are able to coordination well in the driving task without pre-coordination,
@@ -218,10 +218,50 @@
           </ol>
         
           <p class="has-text-weight-bold is-size-4 has-text-grey-dark">Agent Learning</p>
+            <p>
+              Initially, the LLM agents interact with each other in the scenarios and store their experience in the relay buffer. The agents then
+              enage in a discussion session where they sample past experience as a context to refine their joint cooperative strategy.
+            </p>
           <ol>
-            <li><strong>Replay Buffer</strong></li>
-            <li><strong>Batch Sampling</strong></li>
-            <li><strong>Debrief</strong></li>
+            <li>
+              <strong>Replay Buffer</strong>
+                <p>
+                  We store the transition data (observations, actions, next observations) in a replay buffer. When an episode concludes, the environment will
+                  each agent's performance and provide scalar rewards, as well as verbal feedbacks like "Vehicle 109 collided with Vehicle 110 after 2 seconds"
+                  or "Vehicle 111 stagnated for too long to complete its task." Each transition data is retrospectively labeled with enriched meta data, including 
+                  responses from other agents, collision details, stagnaition specifics and final outcomes.
+                </p>
+            </li>
+            <li>
+              <strong>Batch Sampling</strong>
+              <p>
+                While analyzing the entire trajectory would provide
+                a comprehensive understanding of failure cases, computational constraints necessitate sampling a
+                subset (batch) of keyframes from its replay buffer. To prioritize relevant data, the sampling process
+                heuristically assigns higher probabilities to transitions that occur immediately
+                before collisions, involve actions contributing to collisions, or lead to stagnation due to agents slowing
+                down. Additionally, transitions that feature more intensive multi-agent interactions are given more
+                weight.
+              </p>
+            </li>
+            <li>
+              <strong>Debrief</strong>
+              <p>
+                A debriefing session begins when an episode concludes in failure (collision or stagna-
+                tion) and is conducted in a turn-based manner over N rounds, with a focus on improving cooperation
+                in future interactions. The speaking order is deterministic in this work for each session, and agents
+                take turns speaking in a round-robin format. The agent chosen to speak first is responsible for
+                proposing a joint cooperative strategy for everyone participating in the debriefing
+                (the focal group). This agent begins by reasoning through its transition data batch, analyzing the
+                consequences and influence on other agents of its actions, and formulating a proposed strategy.
+                Subsequently, the other agents take turns sharing their perspectives, providing feedback, or offering
+                alternative insights based on their analysis of their own experience batch. After the discussion, each
+                agent summarizes the discussion to develop individual cooperative strategies and knowledge. 
+                These outcomes serve as in-context guidelines for future driving tasks. This joint discussion
+                for future individual decision-making structure mirrors the principles of the Centralized Training
+                Decentralized Execution (CTDE) framework.
+              </p>
+            </li>
           </ol>
         </div>
       </div>
@@ -233,14 +273,33 @@
 <section class="section">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">Experiments</h2>
+    <p>We established several baselines and scenarios to answer the research questions:</p>
+    <ul>
+      <li>
+        <strong>Zero-shot</strong>: an LLM agent using Chain-of-Thought (CoT) reasoning only.
+      </li>
+      <li>
+        <strong>Reflection</strong>: an LLM agent with CoT reasoning contextualized with knowledge from decentralized reflection.
+      </li>
+      <li>
+        <strong>Correction+RAG</strong>: an LLM agent that corrects past actions via self-reflection, 
+        stores these corrections in a vector-based retrievable memory, and uses few-shot retrieved-example augmented generation.
+      </li>
+      <li>
+        <strong>Correction+RAG (Silent)</strong>: the retrieval-augmented method without communication (adapting <a href="https://pjlab-adg.github.io/DiLu/">DiLU</a>, 
+        a non-communicating single-agent LLM-based reflection-driving approach, to our environment).
+      </li>
+      <li>
+        <strong>Correction+RAG (Comm)</strong>: the multi-agent communication extension of DiLU (<a href="https://arxiv.org/abs/2404.06345">AgentsCoDriver</a>), 
+        which resembles Correction+RAG but does not actively optimize the messages.
+      </li>
+    </ul>
     <p>
-      Talking Vehicles is a promising step towards AI agents that can purposefully communicate with each other 
-      and humans in a natural language to coordinate on a task via self-play among agents. Future work will be
-      directed towards creating more robust and diverse learned policies, integrating larger multimodal models,
-      and studying the learning methods that can train the agents to perform more complex tasks.
+      For a fair comparison across these LLM-based baselines, we did not initialize any knowledge with human data, nor was there human involvement during the learning process.
     </p>
   </div>
 </section>
+
 
 <!-- Qualitative Videos -->
 <section class="section" id="QualitativeVideos">
