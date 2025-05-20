@@ -158,7 +158,7 @@
           <p>
             <img style="max-width:100%" src="./static/images/talking_vehicle_scenarios.png" class="img-reponsive" />
             <figcaption class="has-text-centered has-text-grey-dark is-size-8">
-              <b>Overview of Scenarios and Agent Roles.</b>
+              <b><strong>Figure 1.</strong>Overview of Scenarios and Agent Roles.</b>
               <span style="color: #006400;" class="has-text-weight-bold">Green circles</span>: Focal agents (establish coordination through communication); 
               <span style="color: #8B0000;" class="has-text-weight-bold">Red circles</span>: Potential colliders (violate traffic rules or do not yield); 
               <span style="color: #00008B;" class="has-text-weight-bold">Blue circles</span>: Background agents (not necessarily adversarial).
@@ -189,7 +189,7 @@
           <p style="text-align:center;">
             <img style="max-width:100%" src="./static/images/llm_debrief_method.png" class="img-reponsive" />
             <figcaption class="has-text-centered has-text-grey-dark is-size-8">
-              <b>LLM+Debrief Agent Framework and Agent Learning Pipeline.</b>
+              <b><strong>Figure 2.</strong>LLM+Debrief Agent Framework and Agent Learning Pipeline.</b>
             </figcaption>
           </p>
         </div>
@@ -247,8 +247,8 @@
             <li>
               <strong>Debrief</strong>
               <p>
-                A debriefing session begins when an episode concludes in failure (collision or stagna-
-                tion) and is conducted in a turn-based manner over N rounds, with a focus on improving cooperation
+                A debriefing session begins when an episode concludes in failure (collision or stagnation) 
+                and is conducted in a turn-based manner over N rounds, with a focus on improving cooperation
                 in future interactions. The speaking order is deterministic in this work for each session, and agents
                 take turns speaking in a round-robin format. The agent chosen to speak first is responsible for
                 proposing a joint cooperative strategy for everyone participating in the debriefing
@@ -297,6 +297,12 @@
     <p>
       For a fair comparison across these LLM-based baselines, we did not initialize any knowledge with human data, nor was there human involvement during the learning process.
     </p>
+    <figure class="image is-full-width" style="margin-top: 2em;">
+      <img src="./static/images/talking_vehicle_quantative_results.png" alt="Quantitative results for the talking vehicles experiments">
+      <figcaption class="has-text-centered">
+        <strong>Figure 3.</strong> Quantitative performance comparison across baselines: Zero-shot, Reflection, Correction+RAG, and their Communication/Silent variants.
+      </figcaption>
+    </figure>
   </div>
 </section>
 
@@ -363,22 +369,287 @@
   </div>
 </section>
 
-<!--Example Knowledges-->
+<!-- Example Learned Knowledge -->
+<section class="section" id="example-learned-knowledge">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Example Learned Knowledge</h2>
+
+    <!-- Tabs navigation -->
+    <div class="tabs is-toggle" id="scenario-tabs">
+      <ul>
+        <li class="is-active" data-tab="perception-overtake"><a>Perception Overtake</a></li>
+        <li data-tab="perception-red-light"><a>Perception Red Light</a></li>
+        <li data-tab="perception-left-turn"><a>Perception Left Turn</a></li>
+        <li data-tab="negotiation-overtake"><a>Negotiation Overtake</a></li>
+        <li data-tab="negotiation-highway-merge"><a>Negotiation Hwy Merge</a></li>
+        <li data-tab="negotiation-highway-exit"><a>Negotiation Hwy Exit</a></li>
+      </ul>
+    </div>
+
+    <!-- Content panes -->
+    <div>
+      <div id="perception-overtake" class="tab-content">
+        <h3 class="title is-4">Perception Overtake</h3>
+        <video controls style="width:100%; height:auto; border:1px solid #ddd;">
+          <source src="./static/videos/perception_overtake_risky_distill_success.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p><strong>Car1 (Overtaking)</strong></p>
+        <p>
+          In our refined cooperative strategy, the stationary vehicle in lane 1 will continuously monitor lane -1 
+          for any approaching traffic and provide real-time alerts. Meanwhile, the overtaking vehicle will actively 
+          use its sensors to independently verify the status of lane -1. If both the stationary vehicle's observations 
+          and the overtaking vehicle's sensors confirm that lane -1 is clear, the overtaking vehicle will promptly 
+          proceed with the maneuver to avoid stagnation. If the stationary vehicle detects any traffic in lane -1, 
+          it will immediately communicate this, advising the overtaking vehicle to hold its position. The overtaking 
+          vehicle will remain ready to accelerate smoothly once the lane is confirmed clear. This dual-verification approach, 
+          combining sensor data and real-time communication, ensures a timely and safe overtaking maneuver, 
+          preventing collisions and minimizing stagnation.
+        </p>
+      </div>
+      <div id="perception-red-light" class="tab-content is-hidden">
+        <h3 class="title is-4">Perception Red Light</h3>
+        <video controls style="width:100%; height:auto; border:1px solid #ddd;">
+          <source src="./static/videos/perception_red_light_risky_distill_success.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>…learned knowledge for Perception Red Light…</p>
+      </div>
+      <div id="perception-left-turn" class="tab-content is-hidden">
+        <h3 class="title is-4">Perception Left Turn</h3>
+        <video controls style="width:100%; height:auto; border:1px solid #ddd;">
+          <source src="./static/videos/perception_left_turn_risky_debrief_success.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>…learned knowledge for Perception Left Turn…</p>
+      </div>
+      <div id="negotiation-overtake" class="tab-content is-hidden">
+        <h3 class="title is-4">Negotiation Overtake</h3>
+        <video controls style="width:100%; height:auto; border:1px solid #ddd;">
+          <source src="./static/videos/negotiation_overtake_risky_distill_success.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>…learned knowledge for Negotiation Overtake…</p>
+      </div>
+      <div id="negotiation-highway-merge" class="tab-content is-hidden">
+        <h3 class="title is-4">Negotiation Highway Merge</h3>
+        <video controls style="width:100%; height:auto; border:1px solid #ddd;">
+          <source src="./static/videos/negotiation_highway_merge_risky_distill_success.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>…learned knowledge for Negotiation Hwy Merge…</p>
+      </div>
+      <div id="negotiation-highway-exit" class="tab-content is-hidden">
+        <h3 class="title is-4">Negotiation Highway Exit</h3>
+        <video controls style="width:100%; height:auto; border:1px solid #ddd;">
+          <source src="./static/videos/negotiation_highway_exit_risky_distill_success.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>…learned knowledge for Negotiation Hwy Exit…</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wrap-tabs CSS -->
+<style>
+  #scenario-tabs ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #scenario-tabs ul li {
+    flex: 0 1 auto;
+    margin: 0.25rem;
+  }
+</style>
+
+<!-- Tab-switching script -->
+<script>
+  document.getElementById('scenario-tabs').addEventListener('click', function(e) {
+    const li = e.target.closest('li[data-tab]');
+    if (!li) return;
+    this.querySelectorAll('li').forEach(tab => tab.classList.remove('is-active'));
+    document.querySelectorAll('#example-learned-knowledge .tab-content').forEach(c => c.classList.add('is-hidden'));
+    li.classList.add('is-active');
+    document.getElementById(li.dataset.tab).classList.remove('is-hidden');
+  });
+</script>
+
+
+
 
 <!--Distillation-->
+<!-- Distillation -->
+<section class="section" id="distillation">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Distillation and Generalization</h2>
+    <p>
+      We perform full-parameter fine-tuning of a compact language model (DistilGPT2&nbsp;<a href="https://arxiv.org/abs/1910.01108">Sanh et al., 2019</a>) 
+      to directly <strong>imitate</strong> the behavior of our large, memory-augmented LLM+Debrief agent. To build the imitation dataset, 
+      we collect every successful evaluation episode across all six scenarios and record the large agent’s token-level outputs. The distillation model 
+      is then trained to minimize cross-entropy loss against those outputs. At inference time, it generates decisions via random sampling with a 
+      temperature of 0.2.
+    </p>
+  </div>
+  <div class="container is-max-desktop content">
+    <p class="subtitle is-6">
+      Each policy is evaluated with three random seeds (30 episodes per seed). We report the mean and ±1 SEM across seeds. 
+      <span class="has-text-grey">Debrief (per-scenario)</span> is an oracle baseline learned individually per scenario.
+    </p>
 
+    <table class="table is-fullwidth is-striped is-hoverable">
+      <thead>
+        <tr>
+          <th rowspan="2">Method</th>
+          <th colspan="2">Overtake (Perception)</th>
+          <th colspan="2">Red Light</th>
+          <th colspan="2">Left Turn</th>
+        </tr>
+        <tr>
+          <th>CR (%) ↓</th>
+          <th>SR (%) ↑</th>
+          <th>CR (%) ↓</th>
+          <th>SR (%) ↑</th>
+          <th>CR (%) ↓</th>
+          <th>SR (%) ↑</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="has-text-grey">Debrief (per-scenario)</td>
+          <td class="has-text-grey">1.1 ± 1.1</td>
+          <td class="has-text-grey"><strong>98.9 ± 1.1</strong></td>
+          <td class="has-text-grey">0.0 ± 0.0</td>
+          <td class="has-text-grey">96.7 ± 0.0</td>
+          <td class="has-text-grey">4.4 ± 2.9</td>
+          <td class="has-text-grey">94.4 ± 2.2</td>
+        </tr>
+        <tr>
+          <td>Centralized Memory</td>
+          <td>2.2 ± 1.1</td>
+          <td>93.3 ± 1.9</td>
+          <td>0.0 ± 0.0</td>
+          <td><strong>100.0 ± 0.0</strong></td>
+          <td>4.4 ± 2.9</td>
+          <td>93.3 ± 3.3</td>
+        </tr>
+        <tr>
+          <td>Distillation</td>
+          <td><strong>0.0 ± 0.0</strong></td>
+          <td>83.3 ± 1.9</td>
+          <td>0.0 ± 0.0</td>
+          <td>91.1 ± 4.4</td>
+          <td><strong>0.0 ± 0.0</strong></td>
+          <td><strong>96.7 ± 0.0</strong></td>
+        </tr>
+      </tbody>
+
+      <thead>
+        <tr>
+          <th rowspan="2">Method</th>
+          <th colspan="2">Overtake (Negotiation)</th>
+          <th colspan="2">Highway Merge</th>
+          <th colspan="2">Highway Exit</th>
+        </tr>
+        <tr>
+          <th>CR (%) ↓</th>
+          <th>SR (%) ↑</th>
+          <th>CR (%) ↓</th>
+          <th>SR (%) ↑</th>
+          <th>CR (%) ↓</th>
+          <th>SR (%) ↑</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="has-text-grey">Debrief (per-scenario)</td>
+          <td class="has-text-grey">10.0 ± 3.8</td>
+          <td class="has-text-grey">87.2 ± 3.9</td>
+          <td class="has-text-grey">2.2 ± 2.2</td>
+          <td class="has-text-grey">97.8 ± 2.2</td>
+          <td class="has-text-grey">13.3 ± 6.0</td>
+          <td class="has-text-grey">86.7 ± 6.0</td>
+        </tr>
+        <tr>
+          <td>Centralized Memory</td>
+          <td>12.2 ± 2.9</td>
+          <td>86.7 ± 1.9</td>
+          <td>1.1 ± 1.1</td>
+          <td>98.9 ± 1.1</td>
+          <td>16.1 ± 4.8</td>
+          <td>82.8 ± 5.3</td>
+        </tr>
+        <tr>
+          <td>Distillation</td>
+          <td><strong>10.0 ± 3.3</strong></td>
+          <td><strong>88.9 ± 4.4</strong></td>
+          <td><strong>0.0 ± 0.0</strong></td>
+          <td><strong>100.0 ± 0.0</strong></td>
+          <td><strong>3.3 ± 0.0</strong></td>
+          <td><strong>96.7 ± 0.0</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="container is-max-desktop content">
+  <h2 class="title is-4">Decision Latency &amp; Message Size (Distilled LLM Policy)</h2>
+
+  <table class="table is-fullwidth is-striped is-hoverable">
+    <caption class="is-sr-only">
+      Decision Latency and Message Size using Distilled LLM Policy across scenarios
+    </caption>
+    <thead>
+      <tr>
+        <th>Latency / Scenario</th>
+        <th>Overtake</th>
+        <th>Left Turn</th>
+        <th>Red Light</th>
+        <th>Overtake</th>
+        <th>Highway Merge</th>
+        <th>Highway Exit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Decision Latency (s)</strong></td>
+        <td>0.45</td>
+        <td>0.44</td>
+        <td>0.38</td>
+        <td>0.14</td>
+        <td>0.19</td>
+        <td>0.20</td>
+      </tr>
+      <tr>
+        <td><strong>Message Size (bytes)</strong></td>
+        <td>223.3</td>
+        <td>297.9</td>
+        <td>223.0</td>
+        <td>28.0</td>
+        <td>59.0</td>
+        <td>59.0</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- Future Work -->
 <section class="section">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">Future Work</h2>
     <p>
       Talking Vehicles is a promising step towards AI agents that can purposefully communicate with each other 
       and humans in a natural language to coordinate on a task via self-play among agents. Future work will be
-      directed towards creating more robust and diverse learned policies, integrating larger multimodal models,
-      and studying the learning methods that can train the agents to perform more complex tasks.
+      directed towards creating more robust and diverse learned policies to enable ad hoc teamwork, 
+      integrating larger multimodal models, and studying the learning methods that can train the agents to perform more complex tasks.
     </p>
   </div>
 </section>
 
+<!-- BibTex -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
