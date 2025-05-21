@@ -39,8 +39,8 @@
       <span class="author-block">
       <a href="https://cuijiaxun.github.io/">Jiaxun Cui</a><sup>1</sup></a>,
       <a href="https://chentangmark.github.io/">Chen Tang</a><sup>1</sup>,
-      Jarrett Holtz<sup>2</sup>,
-      Janice Nguyen<sup>3</sup>,
+      <a href="https://scholar.google.com/citations?user=_XUgxrcAAAAJ&hl=en">Jarrett Holtz</a><sup>2</sup>,
+      <a href="https://scholar.google.com/citations?user=lHO7zwwAAAAJ&hl=en">Janice Nguyen</a><sup>3</sup>,
       <a href="https://scholar.google.co.uk/citations?user=T5JSHMoAAAAJ&hl=en">Alessandro G. Allievi</a><sup>2</sup>,
       <a href="https://hangqiu.github.io/">Hang Qiu</a><sup>3</sup>,
       <a href="https://www.cs.utexas.edu/~pstone/">Peter Stone</a><sup>1,4</sup>
@@ -394,28 +394,32 @@
           <source src="./static/videos/perception_overtake_risky_distill_success.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <p><strong>Car1 (Overtaking)</strong></p>
-        <p>
-          In our refined cooperative strategy, the stationary vehicle in lane 1 will continuously monitor lane -1 
-          for any approaching traffic and provide real-time alerts. Meanwhile, the overtaking vehicle will actively 
-          use its sensors to independently verify the status of lane -1. If both the stationary vehicle's observations 
-          and the overtaking vehicle's sensors confirm that lane -1 is clear, the overtaking vehicle will promptly 
-          proceed with the maneuver to avoid stagnation. If the stationary vehicle detects any traffic in lane -1, 
-          it will immediately communicate this, advising the overtaking vehicle to hold its position. The overtaking 
-          vehicle will remain ready to accelerate smoothly once the lane is confirmed clear. This dual-verification approach, 
-          combining sensor data and real-time communication, ensures a timely and safe overtaking maneuver, 
-          preventing collisions and minimizing stagnation.
-        </p>
-        <p><strong>Truck (Stopped Truck in Lane 1)</strong></p>
-        <p>
-          In our refined cooperative strategy, as the stationary truck in lane 1, I will continuously monitor lane -1 
-          for any approaching traffic and provide immediate alerts if I detect any vehicles, advising the overtaking 
-          vehicle to hold its position. Meanwhile, the overtaking vehicle will actively use its sensors to independently 
-          verify the status of lane -1. If both my observations and the overtaking vehicle's sensors confirm that lane -1 
-          is clear, the overtaking vehicle should promptly proceed with the overtaking maneuver to avoid stagnation. This 
-          dual-verification approach, combining sensor data and real-time alerts, ensures a timely and safe overtaking 
-          maneuver, preventing collisions and minimizing stagnation.
-        </p>
+        <p><strong>Car1 (Overtaking), Vehicle 197</strong></p>
+        <div class="content has-text-justified">
+          <p>
+            In our refined cooperative strategy, the stationary vehicle in lane 1 will continuously monitor lane -1 
+            for any approaching traffic and provide real-time alerts. Meanwhile, the overtaking vehicle will actively 
+            use its sensors to independently verify the status of lane -1. If both the stationary vehicle's observations 
+            and the overtaking vehicle's sensors confirm that lane -1 is clear, the overtaking vehicle will promptly 
+            proceed with the maneuver to avoid stagnation. If the stationary vehicle detects any traffic in lane -1, 
+            it will immediately communicate this, advising the overtaking vehicle to hold its position. The overtaking 
+            vehicle will remain ready to accelerate smoothly once the lane is confirmed clear. This dual-verification approach, 
+            combining sensor data and real-time communication, ensures a timely and safe overtaking maneuver, 
+            preventing collisions and minimizing stagnation.
+          </p>
+        </div>
+        <p><strong>Truck (Stopped Truck in Lane 1), Vehicle 199</strong></p>
+        <div class="content has-text-justified">
+          <p>
+            In our refined cooperative strategy, as the stationary truck in lane 1, I will continuously monitor lane -1 
+            for any approaching traffic and provide immediate alerts if I detect any vehicles, advising the overtaking 
+            vehicle to hold its position. Meanwhile, the overtaking vehicle will actively use its sensors to independently 
+            verify the status of lane -1. If both my observations and the overtaking vehicle's sensors confirm that lane -1 
+            is clear, the overtaking vehicle should promptly proceed with the overtaking maneuver to avoid stagnation. This 
+            dual-verification approach, combining sensor data and real-time alerts, ensures a timely and safe overtaking 
+            maneuver, preventing collisions and minimizing stagnation.
+          </p>
+        </div>
       </div>
       <div id="perception-red-light" class="tab-content is-hidden">
         <h3 class="title is-4">Perception Red Light</h3>
@@ -423,30 +427,34 @@
           <source src="./static/videos/perception_red_light_risky_distill_success.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <p><strong>Car1 (Proceeding Forward with Green Lights)</strong></p>
-        <p>
-          In our cooperative strategy, the vehicle with the best view of the intersection, typically positioned to turn 
-          left, will lead in monitoring and communicating updates about potential threats. This vehicle will provide 
-          real-time information about any approaching vehicles against a red light, including their distance and speed, 
-          and confirm when they have stopped or are no longer a threat. If a threat is detected, the vehicle with the 
-          green light, ready to proceed straight through the intersection, should remain stationary until the intersection 
-          is confirmed clear. The monitoring vehicle will send updates every few seconds to keep all vehicles informed. 
-          Once the threat is resolved, the monitoring vehicle will confirm the intersection is clear, allowing the vehicle 
-          with the green light to proceed promptly and safely. This plan ensures safety by preventing collisions and minimizes 
-          unnecessary delays by enabling vehicles to pass through the intersection efficiently when it is safe to do so.
-        </p>
-        <p><strong>Truck (Stopped at Intersection)</strong></p>
-        <p>
-          In our cooperative strategy, the vehicle with the best view of the intersection, which is the stationary truck 
-          (myself), will lead in monitoring and communicating updates about potential threats. If a vehicle is detected 
-          approaching against a red light, I will immediately alert all vehicles, providing specific information about 
-          the threat's distance and speed. The vehicle with the green light, positioned to proceed straight through the 
-          intersection, should remain stationary until I confirm that the threat has stopped or is no longer present. 
-          I will send updates every few seconds to keep all vehicles informed. Once the intersection is clear, I will 
-          confirm this, allowing the vehicle with the green light to proceed promptly and safely. This plan ensures safety 
-          by preventing collisions and minimizes unnecessary delays by enabling vehicles to pass through the intersection 
-          efficiently when it is safe to do so.
-        </p>
+        <p><strong>Car1 (Proceeding Forward with Green Lights), Vehicle 109</strong></p>
+        <div class="content has-text-justified"> 
+          <p>
+            In our cooperative strategy, the vehicle with the best view of the intersection, typically positioned to turn 
+            left, will lead in monitoring and communicating updates about potential threats. This vehicle will provide 
+            real-time information about any approaching vehicles against a red light, including their distance and speed, 
+            and confirm when they have stopped or are no longer a threat. If a threat is detected, the vehicle with the 
+            green light, ready to proceed straight through the intersection, should remain stationary until the intersection 
+            is confirmed clear. The monitoring vehicle will send updates every few seconds to keep all vehicles informed. 
+            Once the threat is resolved, the monitoring vehicle will confirm the intersection is clear, allowing the vehicle 
+            with the green light to proceed promptly and safely. This plan ensures safety by preventing collisions and minimizes 
+            unnecessary delays by enabling vehicles to pass through the intersection efficiently when it is safe to do so.
+          </p>
+        </div>
+        <p><strong>Truck (Stopped at Intersection), Vehicle 117</strong></p>
+        <div class="content has-text-justified">
+          <p>
+            In our cooperative strategy, the vehicle with the best view of the intersection, which is the stationary truck 
+            (myself), will lead in monitoring and communicating updates about potential threats. If a vehicle is detected 
+            approaching against a red light, I will immediately alert all vehicles, providing specific information about 
+            the threat's distance and speed. The vehicle with the green light, positioned to proceed straight through the 
+            intersection, should remain stationary until I confirm that the threat has stopped or is no longer present. 
+            I will send updates every few seconds to keep all vehicles informed. Once the intersection is clear, I will 
+            confirm this, allowing the vehicle with the green light to proceed promptly and safely. This plan ensures safety 
+            by preventing collisions and minimizes unnecessary delays by enabling vehicles to pass through the intersection 
+            efficiently when it is safe to do so.
+          </p>
+        </div>
       </div>
       <div id="perception-left-turn" class="tab-content is-hidden">
         <h3 class="title is-4">Perception Left Turn</h3>
@@ -454,30 +462,34 @@
           <source src="./static/videos/perception_left_turn_risky_debrief_success.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <p><strong>Car1 (Northbound Left Turning)</strong></p>
-        <p>
-          In our revised cooperative strategy, the stationary vehicle at the intersection will continuously monitor the 
-          traffic flow and provide real-time updates to both the left-turning vehicle (myself) and the oncoming vehicle. 
-          The stationary vehicle will send a message advising me to slow down and assess the situation, ensuring I only 
-          proceed with the left turn when I receive confirmation that the oncoming vehicle has acknowledged the yield 
-          instruction. Simultaneously, the stationary vehicle will instruct the oncoming vehicle to yield and adjust its 
-          speed to allow me to pass safely. If the oncoming vehicle does not acknowledge or adjust its speed, the stationary 
-          vehicle will alert me to stop and wait until it is safe to proceed. This plan ensures that all vehicles are aware 
-          of each other's intentions, allowing me to make the left turn safely and efficiently without causing collisions 
-          or unnecessary stagnation.
-        </p>
-        <p><strong>Truck (Stopped at Intersection)</strong></p>
-        <p>
-          In our revised cooperative strategy, as the stationary vehicle with a clear view of the intersection, I will 
-          continuously monitor the traffic flow and provide real-time updates to both the northbound left-turning 
-          vehicle and the oncoming vehicle. I will send a message to the left-turning vehicle advising it to slow down 
-          and assess the situation, ensuring it only proceeds when it receives confirmation that the oncoming vehicle has 
-          acknowledged the yield instruction. Simultaneously, I will send a message to the oncoming vehicle instructing 
-          it to yield and adjust its speed to allow the left-turning vehicle to pass safely. If the oncoming vehicle does 
-          not acknowledge or adjust its speed, I will alert the left-turning vehicle to stop and wait until it is safe to 
-          proceed. This plan ensures that all vehicles are aware of each other's intentions, allowing the left-turning 
-          vehicle to pass the intersection safely and quickly without causing collisions or unnecessary stagnation.
-        </p>
+        <p><strong>Car1 (Northbound Left Turning), Vehicle 109</strong></p>
+        <div class="content has-text-justified">
+          <p>
+            In our revised cooperative strategy, the stationary vehicle at the intersection will continuously monitor the 
+            traffic flow and provide real-time updates to both the left-turning vehicle (myself) and the oncoming vehicle. 
+            The stationary vehicle will send a message advising me to slow down and assess the situation, ensuring I only 
+            proceed with the left turn when I receive confirmation that the oncoming vehicle has acknowledged the yield 
+            instruction. Simultaneously, the stationary vehicle will instruct the oncoming vehicle to yield and adjust its 
+            speed to allow me to pass safely. If the oncoming vehicle does not acknowledge or adjust its speed, the stationary 
+            vehicle will alert me to stop and wait until it is safe to proceed. This plan ensures that all vehicles are aware 
+            of each other's intentions, allowing me to make the left turn safely and efficiently without causing collisions 
+            or unnecessary stagnation.
+          </p>
+        </div>
+        <p><strong>Truck (Stopped at Intersection), Vehicle 111</strong></p>
+        <div class="content has-text-justified">
+          <p>
+            In our revised cooperative strategy, as the stationary vehicle with a clear view of the intersection, I will 
+            continuously monitor the traffic flow and provide real-time updates to both the northbound left-turning 
+            vehicle and the oncoming vehicle. I will send a message to the left-turning vehicle advising it to slow down 
+            and assess the situation, ensuring it only proceeds when it receives confirmation that the oncoming vehicle has 
+            acknowledged the yield instruction. Simultaneously, I will send a message to the oncoming vehicle instructing 
+            it to yield and adjust its speed to allow the left-turning vehicle to pass safely. If the oncoming vehicle does 
+            not acknowledge or adjust its speed, I will alert the left-turning vehicle to stop and wait until it is safe to 
+            proceed. This plan ensures that all vehicles are aware of each other's intentions, allowing the left-turning 
+            vehicle to pass the intersection safely and quickly without causing collisions or unnecessary stagnation.
+          </p>
+        </div>
       </div>
       <div id="negotiation-overtake" class="tab-content is-hidden">
         <h3 class="title is-4">Negotiation Overtake</h3>
@@ -485,34 +497,38 @@
           <source src="./static/videos/negotiation_overtake_risky_distill_success.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <p><strong>Car1 (Overtaking Car)</strong></p>
-        <p>
-          In our cooperative strategy, when I, as the vehicle intending to overtake a stationary truck in my 
-          lane, need to move into the opposite lane, I will first send a message to the oncoming vehicle in 
-          the opposite lane, indicating my intention to overtake and requesting a temporary speed reduction 
-          to create a safe gap. The oncoming vehicle should acknowledge this request and, if feasible, slightly 
-          slow down to create a safe gap, but avoid coming to a complete stop to prevent stagnation. Once the 
-          gap is sufficient, I will proceed with the overtaking maneuver and return to my original lane as 
-          quickly and safely as possible. After completing the maneuver, I will send a confirmation message, 
-          allowing the oncoming vehicle to resume its target speed. This plan ensures that I minimize my time 
-          in the opposite lane while the other vehicle maintains its urgency, thus preventing collisions and 
-          avoiding stagnation. Effective communication and adaptive speed adjustments are key to ensuring both 
-          vehicles can complete their tasks safely and efficiently.
-        </p>
-        <p><strong>Car2 (Opposite Car)</strong></p>
-        <p>
-          In our cooperative strategy, when a vehicle in the opposite lane intends to overtake a stationary 
-          vehicle and temporarily move into my lane, it should first send a message indicating its intention 
-          and request a temporary speed adjustment. As the vehicle tasked with going forward and keeping lane, 
-          I should acknowledge this request and, if feasible, slightly slow down to create a safe gap, 
-          but avoid coming to a complete stop to prevent stagnation. The overtaking vehicle should proceed with 
-          the maneuver as quickly and safely as possible, minimizing its time in my lane. Once the overtaking 
-          vehicle has safely returned to its original lane, it should send a confirmation message, allowing me 
-          to resume my target speed. This plan ensures that the overtaking vehicle minimizes its time in the 
-          opposite lane while I maintain my urgency, thus preventing collisions and avoiding stagnation. 
-          Effective communication and adaptive speed adjustments are key to ensuring both vehicles can 
-          complete their tasks safely and efficiently.
-        </p>
+        <p><strong>Car1 (Overtaking Car), Vehicle 197</strong></p>
+        <div class="content has-text-justified">
+          <p>
+            In our cooperative strategy, when I, as the vehicle intending to overtake a stationary truck in my 
+            lane, need to move into the opposite lane, I will first send a message to the oncoming vehicle in 
+            the opposite lane, indicating my intention to overtake and requesting a temporary speed reduction 
+            to create a safe gap. The oncoming vehicle should acknowledge this request and, if feasible, slightly 
+            slow down to create a safe gap, but avoid coming to a complete stop to prevent stagnation. Once the 
+            gap is sufficient, I will proceed with the overtaking maneuver and return to my original lane as 
+            quickly and safely as possible. After completing the maneuver, I will send a confirmation message, 
+            allowing the oncoming vehicle to resume its target speed. This plan ensures that I minimize my time 
+            in the opposite lane while the other vehicle maintains its urgency, thus preventing collisions and 
+            avoiding stagnation. Effective communication and adaptive speed adjustments are key to ensuring both 
+            vehicles can complete their tasks safely and efficiently.
+          </p>
+        </div>
+        <p><strong>Car2 (Opposite Car), Vehicle 198</strong></p>
+        <div class="content has-text-justified">
+          <p>
+            In our cooperative strategy, when a vehicle in the opposite lane intends to overtake a stationary 
+            vehicle and temporarily move into my lane, it should first send a message indicating its intention 
+            and request a temporary speed adjustment. As the vehicle tasked with going forward and keeping lane, 
+            I should acknowledge this request and, if feasible, slightly slow down to create a safe gap, 
+            but avoid coming to a complete stop to prevent stagnation. The overtaking vehicle should proceed with 
+            the maneuver as quickly and safely as possible, minimizing its time in my lane. Once the overtaking 
+            vehicle has safely returned to its original lane, it should send a confirmation message, allowing me 
+            to resume my target speed. This plan ensures that the overtaking vehicle minimizes its time in the 
+            opposite lane while I maintain my urgency, thus preventing collisions and avoiding stagnation. 
+            Effective communication and adaptive speed adjustments are key to ensuring both vehicles can 
+            complete their tasks safely and efficiently.
+          </p>
+        </div>
       </div>
       <div id="negotiation-highway-merge" class="tab-content is-hidden">
         <h3 class="title is-4">Negotiation Highway Merge</h3>
@@ -520,33 +536,37 @@
           <source src="./static/videos/negotiation_highway_merge_risky_distill_success.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <p><strong>Car1 (Merging on to the Highway)</strong></p>
-        <p>
-          In the cooperative strategy, as the merging vehicle, I will initiate communication by indicating my 
-          intention to merge onto the highway and requesting the vehicle directly to my left on the highway 
-          to create a gap by slightly slowing down or, if feasible, temporarily changing lanes. The highway 
-          vehicle should acknowledge this request and adjust its position accordingly, ensuring it maintains 
-          a safe distance. Meanwhile, I will adjust my speed to align with the newly created gap, ensuring I 
-          do not accelerate until the highway vehicle has stabilized its speed and distance. The vehicle 
-          behind the highway vehicle should maintain its speed or slightly slow down to prevent closing the 
-          gap prematurely. Continuous communication will be maintained, with updates on speed adjustments 
-          and intentions, to ensure all vehicles are aware of each other's actions. This approach will prevent 
-          collisions by ensuring a clear and sufficient gap for merging while avoiding stagnation by coordinating 
-          speed and lane adjustments effectively.
-        </p>
-        <p><strong>Car2 (Highway Vehicle)</strong></p>
-        <p>
-          In the cooperative strategy, the merging vehicle should initiate communication by indicating its 
-          intention to merge onto the highway and requesting the highway vehicle directly to its left to create 
-          a gap by slightly slowing down. The highway vehicle, which is myself, should acknowledge this request 
-          and slightly reduce speed to create a safe merging space, while maintaining my lane and preparing to 
-          accelerate once the merge is complete. The merging vehicle should adjust its speed to align with the 
-          gap, ensuring it does not accelerate until I have stabilized my speed and distance. The vehicle behind 
-          me on the highway should maintain its speed or slightly slow down to prevent closing the gap prematurely. 
-          Continuous communication should be maintained, with updates on speed adjustments and intentions, to 
-          ensure all vehicles are aware of each other's actions. This approach will prevent collisions by ensuring 
-          a clear and sufficient gap for merging while avoiding stagnation by coordinating speed adjustments effectively.
-        </p>
+        <p><strong>Car1 (Merging on to the Highway), Vehicle 120</strong></p>
+        <div class="content has-text-justified">
+          <p>
+            In the cooperative strategy, as the merging vehicle, I will initiate communication by indicating my 
+            intention to merge onto the highway and requesting the vehicle directly to my left on the highway 
+            to create a gap by slightly slowing down or, if feasible, temporarily changing lanes. The highway 
+            vehicle should acknowledge this request and adjust its position accordingly, ensuring it maintains 
+            a safe distance. Meanwhile, I will adjust my speed to align with the newly created gap, ensuring I 
+            do not accelerate until the highway vehicle has stabilized its speed and distance. The vehicle 
+            behind the highway vehicle should maintain its speed or slightly slow down to prevent closing the 
+            gap prematurely. Continuous communication will be maintained, with updates on speed adjustments 
+            and intentions, to ensure all vehicles are aware of each other's actions. This approach will prevent 
+            collisions by ensuring a clear and sufficient gap for merging while avoiding stagnation by coordinating 
+            speed and lane adjustments effectively.
+          </p>
+        </div>
+        <p><strong>Car2 (Highway Vehicle), Vehicle 121</strong></p>
+        <div class="content has-text-justified">
+          <p>
+            In the cooperative strategy, the merging vehicle should initiate communication by indicating its 
+            intention to merge onto the highway and requesting the highway vehicle directly to its left to create 
+            a gap by slightly slowing down. The highway vehicle, which is myself, should acknowledge this request 
+            and slightly reduce speed to create a safe merging space, while maintaining my lane and preparing to 
+            accelerate once the merge is complete. The merging vehicle should adjust its speed to align with the 
+            gap, ensuring it does not accelerate until I have stabilized my speed and distance. The vehicle behind 
+            me on the highway should maintain its speed or slightly slow down to prevent closing the gap prematurely. 
+            Continuous communication should be maintained, with updates on speed adjustments and intentions, to 
+            ensure all vehicles are aware of each other's actions. This approach will prevent collisions by ensuring 
+            a clear and sufficient gap for merging while avoiding stagnation by coordinating speed adjustments effectively.
+          </p>
+        </div>
       </div>
       <div id="negotiation-highway-exit" class="tab-content is-hidden">
         <h3 class="title is-4">Negotiation Highway Exit</h3>
@@ -554,33 +574,37 @@
           <source src="./static/videos/negotiation_highway_exit_risky_distill_success.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <p><strong>Car1 (Exiting the Highway)</strong></p>
-        <p>
-          In our cooperative strategy, as the vehicle in the high-speed lane intending to exit, I will initiate 
-          communication with the vehicle in the leftmost lane at least 100 meters before the exit junction, clearly 
-          indicating my intention to merge. If the vehicle in the leftmost lane is slightly ahead or side-by-side, 
-          it should decelerate slightly to create a gap ahead, allowing me to merge smoothly without causing stagnation. 
-          I will maintain a speed that allows me to observe the gap being created and will only proceed with the lane 
-          change once I have a clear visual confirmation of a safe gap. If the vehicle in the leftmost lane is stationary 
-          or unable to create a gap due to traffic conditions, it should communicate this status immediately. In such 
-          cases, I will adjust my speed to maintain a safe distance and seek an alternative gap or prepare to slow down 
-          significantly if necessary. Both vehicles should actively communicate their speed adjustments and confirm when 
-          a safe gap is established, ensuring that the lane change is executed without collision or stagnation.
-        </p>
-        <p><strong>Car2 (Leader of the Left Flow Staying on the Highway)</strong></p>
-        <p>
-          In our cooperative strategy, when a vehicle in the adjacent lane intends to merge into the leftmost lane for 
-          a highway exit, it should initiate communication at least 100 meters before the exit junction, clearly indicating 
-          its intention to merge. As the vehicle currently in the leftmost lane, my responsibility is to promptly acknowledge 
-          this message and assess the traffic situation. If I am slightly ahead or side-by-side with the merging vehicle, 
-          I will decelerate slightly to create a gap ahead, allowing the merging vehicle to merge smoothly without causing 
-          stagnation. The merging vehicle should maintain a speed that allows it to observe the gap being created and only 
-          proceed with the lane change once it has a clear visual confirmation of a safe gap. If I am stationary or unable 
-          to create a gap due to traffic conditions, I will communicate this status immediately. In such cases, the merging 
-          vehicle should adjust its speed to maintain a safe distance and seek an alternative gap or prepare to slow down 
-          significantly if necessary. Both vehicles should actively communicate their speed adjustments and confirm when a 
-          safe gap is established, ensuring that the lane change is executed without collision or stagnation."
-        </p>
+        <p><strong>Car1 (Exiting the Highway), Vehicle 120</strong></p>
+        <div class="content has-text-justified">
+          <p>
+            In our cooperative strategy, as the vehicle in the high-speed lane intending to exit, I will initiate 
+            communication with the vehicle in the leftmost lane at least 100 meters before the exit junction, clearly 
+            indicating my intention to merge. If the vehicle in the leftmost lane is slightly ahead or side-by-side, 
+            it should decelerate slightly to create a gap ahead, allowing me to merge smoothly without causing stagnation. 
+            I will maintain a speed that allows me to observe the gap being created and will only proceed with the lane 
+            change once I have a clear visual confirmation of a safe gap. If the vehicle in the leftmost lane is stationary 
+            or unable to create a gap due to traffic conditions, it should communicate this status immediately. In such 
+            cases, I will adjust my speed to maintain a safe distance and seek an alternative gap or prepare to slow down 
+            significantly if necessary. Both vehicles should actively communicate their speed adjustments and confirm when 
+            a safe gap is established, ensuring that the lane change is executed without collision or stagnation.
+          </p>
+        </div>
+        <p><strong>Car2 (Leader of the Left Flow Staying on the Highway), Vehicle 121</strong></p>
+        <div class="content has-text-justified">
+          <p>
+            In our cooperative strategy, when a vehicle in the adjacent lane intends to merge into the leftmost lane for 
+            a highway exit, it should initiate communication at least 100 meters before the exit junction, clearly indicating 
+            its intention to merge. As the vehicle currently in the leftmost lane, my responsibility is to promptly acknowledge 
+            this message and assess the traffic situation. If I am slightly ahead or side-by-side with the merging vehicle, 
+            I will decelerate slightly to create a gap ahead, allowing the merging vehicle to merge smoothly without causing 
+            stagnation. The merging vehicle should maintain a speed that allows it to observe the gap being created and only 
+            proceed with the lane change once it has a clear visual confirmation of a safe gap. If I am stationary or unable 
+            to create a gap due to traffic conditions, I will communicate this status immediately. In such cases, the merging 
+            vehicle should adjust its speed to maintain a safe distance and seek an alternative gap or prepare to slow down 
+            significantly if necessary. Both vehicles should actively communicate their speed adjustments and confirm when a 
+            safe gap is established, ensuring that the lane change is executed without collision or stagnation."
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -619,15 +643,17 @@
 <section class="section" id="distillation">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">Distillation and Generalization</h2>
-    <p>
-      We perform full-parameter fine-tuning of a compact language model (DistilGPT2&nbsp;<a href="https://arxiv.org/abs/1910.01108">Sanh et al., 2019</a>) 
-      to directly <strong>imitate</strong> the behavior of our large, memory-augmented LLM+Debrief agent. To build the imitation dataset, 
-      we collect every successful evaluation episode across all six scenarios and record the large agent’s token-level outputs. The distillation model 
-      is then trained to minimize cross-entropy loss against those outputs. At inference time, it generates decisions via random sampling with a 
-      temperature of 0.2.
-    </p>
+    <div class="content has-text-justified">
+      <p>
+        We perform full-parameter fine-tuning of a compact language model (DistilGPT2&nbsp;<a href="https://arxiv.org/abs/1910.01108">Sanh et al., 2019</a>) 
+        to directly <strong>imitate</strong> the behavior of our large, memory-augmented LLM+Debrief agent. To build the imitation dataset, 
+        we collect every successful evaluation episode across all six scenarios and record the large agent’s token-level outputs. The distillation model 
+        is then trained to minimize cross-entropy loss against those outputs. At inference time, it generates decisions via random sampling with a 
+        temperature of 0.2.
+      </p>
+    </div>
   </div>
-  <div class="container is-max-desktop content">
+  <div class="container is-max-desktop content has-text-justified">
     <p class="subtitle is-6">
       Each policy is evaluated with three random seeds (30 episodes per seed). We report the mean and ±1 SEM across seeds. 
       <span class="has-text-grey">Debrief (per-scenario)</span> is an oracle baseline learned individually per scenario.
@@ -775,12 +801,14 @@
 <section class="section">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">Future Work</h2>
-    <p>
-      Talking Vehicles is a promising step towards AI agents that can purposefully communicate with each other 
-      and humans in a natural language to coordinate on a task via self-play among agents. Future work will be
-      directed towards creating more robust and diverse learned policies to enable ad hoc teamwork, 
-      integrating larger multimodal models, and studying the learning methods that can train the agents to perform more complex tasks.
-    </p>
+    <div class="content has-text-justified">
+      <p>
+        Talking Vehicles is a promising step towards AI agents that can purposefully communicate with each other 
+        and humans in a natural language to coordinate on a task via self-play among agents. Future work will be
+        directed towards creating more robust and diverse learned policies to enable ad hoc teamwork, 
+        integrating larger multimodal models, and studying the learning methods that can train the agents to perform more complex tasks.
+      </p>
+    </div>
   </div>
 </section>
 
