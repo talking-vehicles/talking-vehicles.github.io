@@ -4,7 +4,7 @@ This is the repository that contains source code for the [Nerfies website](https
 
 If you find Talking Vehicles useful for your work please cite:
 ```
-@misc{cui2025naturallanguagecommunicationcooperative,
+@misc{cui2025talkingvehicles,
       title={Towards Natural Language Communication for Cooperative Autonomous Driving via Self-Play}, 
       author={Jiaxun Cui and Chen Tang and Jarrett Holtz and Janice Nguyen and Alessandro G. Allievi and Hang Qiu and Peter Stone},
       year={2025},
