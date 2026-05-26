@@ -130,9 +130,9 @@
             communication protocol offers the potential for autonomous vehicles to drive cooperatively not only with each other but also with 
             human drivers. In this work, we propose a suite of traffic tasks in autonomous driving where vehicles in a traffic scenario need 
             to communicate in natural language to facilitate coordination in order to avoid an imminent collision and/or support efficient 
-            traffic flow. To this end, this paper introduces a novel method, LLM+Debrief, to learn a message generation and high-level decision-making 
+            traffic flow. To this end, this paper introduces a novel method, CoopReflect, to learn a message generation and high-level decision-making 
             policy for autonomous vehicles through multi-agent discussion. To evaluate LLM agents for driving, we developed a gym-like simulation 
-            environment that contains a range of driving scenarios. Our experimental results demonstrate that LLM+Debrief is more effective at 
+            environment that contains a range of driving scenarios. Our experimental results demonstrate that CoopReflect is more effective at 
             generating meaningful and human-understandable natural language messages to facilitate cooperation and coordination than a zero-shot 
             LLM agent. 
           </p>
@@ -169,27 +169,27 @@
     </div>
 </section>
 
-<!--LLM+Debrief Method-->
+<!--CoopReflect Method-->
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Overview -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">
-          LLM+Debrief
+          CoopReflect
           <span class="is-size-4" style="color: #666666;">Learn to Collaborate using Natural Language via Self-Play</span>
         </h2>
         <p>
           We ask the key research question that whether the current LLM agents are able to coordination well in the driving task without pre-coordination,
           and whether their cooperation capability could be improved over interactions. We start from building an agent that only rely on Chain-of-Thought,
-          gradually extending to self-reflections and centralized discussions (LLM+Debrief) to create knowledge for future driving and collaborations.
+          gradually extending to self-reflections and centralized discussions (CoopReflect) to create knowledge for future driving and collaborations.
         </p>
         <br>
         <div class="content has-text-justified">
           <p style="text-align:center;">
             <img style="max-width:100%" src="./static/images/llm_debrief_method.png" class="img-reponsive" />
             <figcaption class="has-text-centered has-text-grey-dark is-size-8">
-              <b><strong>Figure 2.</strong>LLM+Debrief Agent Framework and Agent Learning Pipeline.</b>
+              <b><strong>Figure 2.</strong>CoopReflect Agent Framework and Agent Learning Pipeline.</b>
             </figcaption>
           </p>
         </div>
@@ -646,7 +646,7 @@
     <div class="content has-text-justified">
       <p>
         We perform full-parameter fine-tuning of a compact language model (DistilGPT2&nbsp;<a href="https://arxiv.org/abs/1910.01108">Sanh et al., 2019</a>) 
-        to directly <strong>imitate</strong> the behavior of our large, memory-augmented LLM+Debrief agent. To build the imitation dataset, 
+        to directly <strong>imitate</strong> the behavior of our large, memory-augmented CoopReflect agent. To build the imitation dataset, 
         we collect every successful evaluation episode across all six scenarios and record the large agent’s token-level outputs. The distillation model 
         is then trained to minimize cross-entropy loss against those outputs. At inference time, it generates decisions via random sampling with a 
         temperature of 0.2.
